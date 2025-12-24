@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Christmas Gift 🎄</title>
+<style>
+body{
+  margin:0;
+  height:100vh;
+  background:#fff3e8;
+  font-family:sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.card{
+  background:white;
+  width:90%;
+  max-width:420px;
+  padding:25px;
+  border-radius:25px;
+  text-align:center;
+  box-shadow:0 15px 40px rgba(0,0,0,0.15);
+}
+h1{font-size:32px;}
+p{font-size:18px;color:#555;}
+button{
+  margin-top:20px;
+  padding:14px 30px;
+  background:#ff4d6d;
+  color:white;
+  border:none;
+  border-radius:30px;
+  font-size:18px;
+}
+img{width:120px;}
+</style>
+</head>
+<body>
+
+<div class="card" id="box">
+  <img src="https://i.imgur.com/7QZ6F9p.png">
+  <h1>Hey You 🎄</h1>
+  <p>I wanted to do a tiny something this Christmas,<br>because you mean a lot to me.</p>
+  <button onclick="next()">Open Your Gift 🎁</button>
+</div>
+
+<script>
+const msgs=[
+"🎄 Merry Christmas!",
+"🐱 Santa’s cat says hi",
+"✨ You matter more than you know",
+"☃️ Winter feels warmer because of you",
+"💖 This came straight from my heart",
+"🎁 You’re my favorite part of Christmas"
+];
+let i=0;
+function next(){
+document.getElementById("box").innerHTML=
+`<img src="https://i.imgur.com/7QZ6F9p.png">
+<h1>${msgs[i]}</h1>
+<p>Tap again ✨</p>
+<button onclick="next()">Next</button>`;
+i=(i+1)%msgs.length;
+}
+</script>
+
+</body>
+</html>
